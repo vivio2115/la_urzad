@@ -10,32 +10,64 @@
     <title>Los Angos RP - W trakcie tworzenia</title>
     <style>
         body {
-            background-color: #121212;
-            color: #ffffff;
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             margin: 0;
-            flex-direction: column;
-            text-align: center;
+            font-family: Arial, sans-serif;
+            background: url('https://pbs.twimg.com/media/FEXEIAqWQAc2rmN.jpg:large') repeat-x;
+            animation: backgroundAnimation 20s linear infinite;
+            color: #ffffff;
+            overflow: hidden;
         }
+
+        @keyframes backgroundAnimation {
+            0% { background-position: 0 0; }
+            50% { background-position: -100% 0; }
+            100% { background-position: 0 0; }
+        }
+
         .container {
-            max-width: 800px;
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            max-width: 300px;
             padding: 20px;
-            border: 2px solid #00ffff; /* Cyan accent */
+            background-color: rgba(31, 31, 31, 0.9);
             border-radius: 10px;
-            background-color: #1f1f1f;
             box-shadow: 0 4px 8px rgba(0, 255, 255, 0.2); /* Cyan shadow */
         }
+
         h1 {
             font-size: 2.5em;
             margin-bottom: 20px;
             color: #00ffff; /* Cyan accent */
         }
+
         p {
             font-size: 1.2em;
+        }
+
+        .waves {
+            position: absolute;
+            width: 100%;
+            height: 150px;
+            background: url('data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTYwMCAxNTAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjE2MDAiIGhlaWdodD0iMTUwIj48cGF0aCBkPSJNMTYwMCAxNTBIMFYwbTE2MDAgMjEuNDNMMCAxMDBtMTYwMCAxMS40M0w4MCA0NS4xOWwtODA4MCA3MC42djExMmgxNjAwbTAtMTEuNTRsLTgwMC01My40M0wwIDEwMW0xNjAwLTQ1LjQ0TDgwMCA0MS43NWwtODA4MCA2NS4xVjE1MGgxNjAwIiBmaWxsPSIjMDBmZmZmIiAvPjwvc3ZnPg==') repeat-x;
+            background-size: 200% 100%;
+        }
+
+        .waves.top {
+            top: 0;
+            animation: waveAnimation 20s linear infinite;
+        }
+
+        .waves.bottom {
+            bottom: 0;
+            transform: rotate(180deg);
+            animation: waveAnimation 20s linear infinite reverse;
+        }
+
+        @keyframes waveAnimation {
+            0% { background-position: 0 0; }
+            100% { background-position: 100% 0; }
         }
     </style>
 </head>
@@ -44,5 +76,7 @@
         <h1>Los Angos RP</h1>
         <p>Strona jest jeszcze w trakcie tworzenia. Prosimy o cierpliwość!</p>
     </div>
+    <div class="waves top"></div>
+    <div class="waves bottom"></div>
 </body>
 </html>
